@@ -7,27 +7,27 @@ from django.db import models
 # Modelos: Propietario, Recolector, Cooperativa
 
 class Recolector(models.Model):
-    nombre = models.CharField(max_lenght="20")
+    nombre = models.CharField(max_lenght=20)
     ID = models.IntegerField(default=0)
-    contrasena = models.CharField(max_lenght="20")
+    contrasena = models.CharField(max_lenght=20)
 
 class Propietario(models.Model):
-    nombre = models.CharField(max_lenght="20")
+    nombre = models.CharField(max_lenght=20)
     ID = models.IntegerField(default=0)
-    contrasena = models.CharField(max_lenght="20")
-    nombreFinca = models.CharField(max_lenght="20")
+    contrasena = models.CharField(max_lenght=20)
+    nombreFinca = models.CharField(max_lenght=20)
 
 class AdminCooperativa(models.Model):
-    nombre = models.CharField(max_lenght="20")
+    nombre = models.CharField(max_lenght=20)
     ID = models.IntegerField(default=0)
-    contrasena = models.CharField(max_lenght="20")
+    contrasena = models.CharField(max_lenght=20)
 
 class Superusuario(models.Model):
-    nombre = models.CharField(max_lenght="20")
+    nombre = models.CharField(max_lenght=20)
     ID = models.IntegerField(default=0)
-    contrasena = models.CharField(max_lenght="20")
+    contrasena = models.CharField(max_lenght=20)
 
 class SuperNumerario(models.Model):
-    nombre = models.CharField(max_lenght="20")
+    nombre = models.CharField(max_lenght=20)
     ID = models.IntegerField(default=0)
-    contrasena = models.CharField(max_lenght="20")
+    contrasena = models.CharField(max_lenght=20)
