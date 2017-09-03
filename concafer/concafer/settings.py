@@ -55,7 +55,8 @@ ROOT_URLCONF = 'concafer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #se crea el template con os.path.join(BASE_DIR, ...) que indica la direccion raiz del proyecto
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

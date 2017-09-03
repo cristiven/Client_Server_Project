@@ -1,0 +1,10 @@
+<h1> ConCafer </h1>
+<!--
+{{..}} para renderizar variables de la plantilla
+csrf_token: como se esta utilizando un metodo POST se utiliza esto para la parte de la seguridad de las peticiones
+-->
+
+<form method="POST" action="">{% csrf_token %}
+{{ el_form.as_p }}
+<input type="submit" value='Registrame'/>
+</form>
