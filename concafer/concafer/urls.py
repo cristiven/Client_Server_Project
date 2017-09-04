@@ -21,5 +21,6 @@ from sgc import views
 urlpatterns = [
     url(r'^sgc/', include('sgc.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.inicio, name='inicio')
+    url(r'^$', views.inicio, name='inicio'),
+    
 ]

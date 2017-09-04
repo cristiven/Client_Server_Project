@@ -1,11 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+
+from django.views.generic import TemplateView
+
 #Para insertar un formulario en una vista se hace esta importacion
 from .forms import RegForm
 
 #Se importa del modelo Recolector para poder llenar los datos
 from .models import Recolector
+
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")

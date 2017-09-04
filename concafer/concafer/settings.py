@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'sgc',
+    
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+AUTHENTICATION_BACKENDS = [
+    'social.backends.facebook.FacebookAppOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+#lo redirige al inicio despues de habaer echo login
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/menu'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '114121485934938'
+SOCIAL_AUTH_FACEBOOK_SECRET = '1bb917e4aed1d3024ea6e3b0f4f98d3a'
+
+
+
+SOCIAL_AUTH_GOOGLE_KEY = '69190513652'
+SOCIAL_AUTH_GOOGLE_SECRET = 'r985cv103hr7306cc1o6r2fgf45rl63p.apps.googleusercontent.com'

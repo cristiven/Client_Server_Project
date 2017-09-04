@@ -13,6 +13,8 @@ from .models import SuperNumerario
 
 class AdminRecolector(admin.ModelAdmin):
 	list_display = ["nombre","ciudad"]
+	#para cambiar el enlace 
+	#list_display_links = ["ciudad"]
 	list_filter = ["ciudad"]
 	list_editable = ["ciudad"]
 	search_fields = ["nombre","ciudad"]

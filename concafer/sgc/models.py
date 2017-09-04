@@ -6,6 +6,7 @@ from django.db import models
 # Create your models here.
 # Modelos: Propietario, Recolector, Cooperativa
 
+
 class Recolector(models.Model):
     nombre = models.CharField(max_length=20)
     ciudad = models.CharField(max_length=20)
