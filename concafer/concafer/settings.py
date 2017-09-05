@@ -129,11 +129,15 @@ STATIC_URL = '/static/'
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
 )
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'home'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '534423398729-264vb2bsvoj9lq31gulvrgo9m3sci9m9.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'TD3BaDNcjfuenHGF4ai2z7HJ'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '114121485934938'
 SOCIAL_AUTH_FACEBOOK_SECRET = '1bb917e4aed1d3024ea6e3b0f4f98d3a'
