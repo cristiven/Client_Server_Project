@@ -1,14 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
 {% block content %}
-  <h2>Homepage</h2>
-  
   {% if not user.is_authenticated %}
-  	<h1>See you soon: {{user}}</h1>
+  	<h2>Hasta pronto...</h2>
   	<br><br>
-  	<a href="/login/">LogIn</a>
+    <a href="/">Iniciar Sección</a>
   {% else %}
-  	<p>Hello {{  user.username }}!</p>
+    <h2>Autentificación exitosa</h2>
+    <br>
+  	<h4>Bienvenido {{  user.username }} !!</h4>
+    <br>
+    <p>Subir archivo con Google Drive</p>
+    <a href="/gd/"><img src="{% static 'img/gd1.jpg' %}"/></a>
 	<br><br>
-	<a href="/logout/">LogOut</a>
+	<a href="/logout/">Salir</a>
   {%endif%}	
 {% endblock %}
 

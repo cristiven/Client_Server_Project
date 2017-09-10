@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n5e06jltg@_*hfoe+h2)9s50vbvhld@c!palr16p6byi4gsuqd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# si debug es True estamos en desarrollo de lo contrario estamos en produccion
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -38,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'crispy_forms',
     'sgc',
+    #'gdstorage',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -54,6 +57,8 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'concafer.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 TEMPLATES = [
     {
@@ -141,3 +146,26 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'TD3BaDNcjfuenHGF4ai2z7HJ'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '114121485934938'
 SOCIAL_AUTH_FACEBOOK_SECRET = '1bb917e4aed1d3024ea6e3b0f4f98d3a'
+ 
+
+
+#GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(BASE_DIR, "gdstorage.json")
+#GOOGLE_DRIVE_STORAGE_SERVICE_EMAIL = '61034839021-r18v4c9k072dud32iook8pv8meaie8vv@developer.gserviceaccount.com'
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+#configuración de los archivos estaticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static_pro", "static"),
+    #'/var/www/static/',
+]
+
+# Es en donde se van a enviar los archivos estaricos que viven en STATICFILES_DIRS
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env_concafer", "static_root")
+
+# Son los archivos estaticos subidos por un tercero que son imagenes que son subidos por usuarios
+STATIC_MEDIA = os.path.join(os.path.dirname(BASE_DIR), "static_env_concafer", "media_root") 
