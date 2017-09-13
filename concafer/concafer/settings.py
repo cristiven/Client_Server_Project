@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    #'social_auth.backend.pipeline.social.social_auth_user',
     'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
@@ -138,6 +138,9 @@ AUTHENTICATION_BACKENDS = (
 
     'django.contrib.auth.backends.ModelBackend',
 )
+
+
+
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'home'
 

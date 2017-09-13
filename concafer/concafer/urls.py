@@ -20,16 +20,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from sgc import views as core_views
+from .views import about
 
 urlpatterns = [
     url(r'^home/$', core_views.home, name='home'),
     url(r'^$', core_views.inicio, name='inicio'),
-    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^login/$', core_views.login, name='login'),
     #url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
     url(r'^admin/', admin.site.urls),
     url(r'^logout/$', core_views.LogOut, name='LogOut'),
     url(r'^gd/$', core_views.gd, name='gd'),
+    url(r'^about/$', about, name='about'),
 ]
 
 # se coloca para asegurar que los urls estan en desarrollo
