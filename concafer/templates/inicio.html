@@ -43,25 +43,23 @@
   </div>  
   <!--<button id="slideShowButton"></button> --> <!-- Optional button element. If this button element is used and if this ID value is changed, the corresponding ID value in slideShow.js must be change analogously. -->
   <script src="{% static 'js/slideShow.js' %}"></script> <!-- Required. -->
+
+  <div class="jumbotron">
+  <div class="container">
+  <div class='row'>
+    <div class='col-sm-6'>
+        <h2><strong> Sistema de contratación de personas recolectoras de café </strong></h2>
+          <p>En busca de dignificar la mano de obra de todas las personas recolectoras de café.</p>
+          
+          <p>
+            <a class="btn btn-lg btn-primary" href="{% url 'registration_register' %}" role="button">Únete &raquo;</a>
+          </p>
+  </div>
+  <div class= 'col-sm-6'><iframe width="560" height="315" src="https://www.youtube.com/embed/3U1sYZgwHH4" frameborder="0" allowfullscreen></iframe> </div>
+  </div>
+  </div>
+  </div>
 </body>
 
 </html>
-
-<div class="jumbotron">
-<div class="container">
-<div class='row'>
-  <div class='col-sm-6'>
-      <h2><strong> Sistema de contratación de personas recolectoras de café </strong></h2>
-        <p>En busca de dignificar la mano de obra de todas las personas recolectoras de café.</p>
-        
-        <p>
-          <a class="btn btn-lg btn-primary" href="{% url 'registration_register' %}" role="button">Únete &raquo;</a>
-        </p>
-</div>
-<div class= 'col-sm-6'><iframe width="560" height="315" src="https://www.youtube.com/embed/3U1sYZgwHH4" frameborder="0" allowfullscreen></iframe> </div>
-</div>
-</div>
-</div>
-
-
 {% endblock %}
