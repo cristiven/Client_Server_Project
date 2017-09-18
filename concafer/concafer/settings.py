@@ -29,6 +29,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+#para envio de emails
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'concafer172@gmail.com'
+EMAIL_HOST_PASSWORD = 'concafer271'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -36,10 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
     'crispy_forms',
+    'registration', 
     'sgc',
     #'gdstorage',
 ]
@@ -172,3 +182,10 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env_concafer", "st
 
 # Son los archivos estaticos subidos por un tercero que son imagenes que son subidos por usuarios
 STATIC_MEDIA = os.path.join(os.path.dirname(BASE_DIR), "static_env_concafer", "media_root") 
+
+
+
+ACCOUNT_ACTIVATION_DAYS  =  7  # Ventana de activación de una semana; usted puede, por supuesto, utilizar un valor diferente.
+REGISTRATION_AUTO_LOGIN  =  True  # Registrar automáticamente el usuario en.
+SITE_ID = 1 # Para activar la aplicación de sites
+LOGIN_REDIRECT_URL = '/'

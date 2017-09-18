@@ -32,6 +32,8 @@ urlpatterns = [
     url(r'^logout/$', core_views.LogOut, name='LogOut'),
     url(r'^gd/$', core_views.gd, name='gd'),
     url(r'^about/$', about, name='about'),
+    # Para utilizar todas las vistas de django-registration-redux
+    url(r'^accounts/', include('registration.backends.default.urls')),
 ]
 
 # se coloca para asegurar que los urls estan en desarrollo

@@ -33,5 +33,5 @@ def login(request):
 	context = {
 		"login_super_user": form,
 	}
-	return render(request, 'registration/login.html', context)
+	return render(request, 'login_b.html', context)
 	

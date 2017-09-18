@@ -1,22 +1,24 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% load static %}
 
-
 {% block content %}
-<div class=row>
-  <div class= 'col-sm-3 col-sm-offset-4'>
-    <h2> Inicio de Sección </h2>
-    <form method="POST">{% csrf_token %}
-    {{ login_super_user|crispy }}
-    <input class='btn btn-primary' type="submit" value="Iniciar Sección" style="width: 360px; height: 40px"><br>
-    <br>
-    <p><strong> Iniciar con: </strong></p>
-    <a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'img/fb.jpg' %}"/></a>
-    <a href="{% url 'social:begin' 'google-oauth2' %}">  <img src="{% static 'img/g.jpg' %}"/></a>
-    </form>
-  </div>
-</div>
+<div class = 'col-sm-6 col-sm-offset-3'>
+	<h2 class = 'text-align-center'><strong>Iniciar Sesión</strong></h2>
+<form method="post" action=".">
+  {% csrf_token %} 
+  {{ form|crispy }}
 
+  <input class = 'btn btn-primary' type="submit" value="{% trans 'Iniciar sesion' %}" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+<br>
+<p><strong>Iniciar con:</strong></p>
+<a href="{% url 'social:begin' 'facebook' %}"><img src="{% static 'img/fb.jpg' %}"/></a>
+<a href="{% url 'social:begin' 'google-oauth2' %}">  <img src="{% static 'img/g.jpg' %}"/></a>
+
+<br><br>
+<p>{% trans "Has olvidado tu contrasena" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Restablecer" %}</a>!</p>
+<p>{% trans "No tienes cuenta" %}? <a href="{% url 'registration_register' %}">{% trans "Registrarte" %}</a>!</p>
 {% endblock %}
-
